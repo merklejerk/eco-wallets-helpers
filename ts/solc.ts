@@ -55,6 +55,23 @@ export interface CompilerInputOpts {
 
 const DEFAULT_OUTPUT_SELECTION = ['evm.deployedBytecode.object', 'abi'];
 
+export function createBrowserCompilerCode(opts: CompilerInputOpts): string {
+    return `// SPDX-License-Identifier: UNLICENSED
+        pragma solidity ${opts.version};
+
+        ${(opts.extraOuterDefs || []).join('\n')}
+
+        contract WalletOperation {
+
+            ${(opts.extraInnerDefs || []).join('\n')}
+
+            fallback() external payable {
+                ${opts.fragment}
+            }
+        }
+    `;
+}
+
 export function createCompilerInput(opts: CompilerInputOpts): CompilerInput {
     const name = getWalletOperationContractName(opts.fragment);
     const src = `// SPDX-License-Identifier: UNLICENSED
