@@ -1,7 +1,7 @@
 import 'mocha';
 import {expect} from 'chai';
 import solc from 'solc';
-import {createCompilerInput, parseCompilerOutput} from '../ts/lib';
+import {createCompilerInput, parseCompilerOutput} from '../ts/solc';
 import {outerDefs as builtinOuterDefs, innerDefs as builtinInnerDefs, innerDefs} from '../ts/builtins';
 
 describe('lib tests', () => {
