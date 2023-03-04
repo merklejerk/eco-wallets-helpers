@@ -99,7 +99,7 @@ export class CompilerError extends Error {
 export function parseCompilerOutput(output: CompilerOutput): { abi: any[], runtimeCode: string, warnings: string[] } {
     const errors = (output.errors || []).filter(e => e.severity === 'error');
     if (errors.length) {
-        throw new CompilerError(errors.map(e => e.message).join('\n'));
+        throw new CompilerError(errors.map(e => e.formattedMessage).join('\n'));
     }
     const art = Object.values(output.contracts?.['main'] || {})?.[0];
     return {

@@ -32,3 +32,22 @@ export const outerDefs = [
         function withdraw(uint256 amount) external;
     }`,
 ];
+
+export const innerDefs = [
+    `event Result(uint256);`,
+    `event Result(uint256, uint256);`,
+    `event Result(uint256, uint256, uint256);`,
+    `event Result(string);`,
+    `event Result(string, string);`,
+    `event Result(string, uint256);`,
+    `event Result(uint256, string);`,
+    `event Result(bool);`,
+    `event Result(string, bool);`,
+    `event Result(bool, string);`,
+    `event Result(bytes);`,
+    `event Result(bytes, bytes);`,
+    `event Result(string, bytes);`,
+    `event Result(bytes, uint256);`,
+    `event Result(uint256, bytes);`,
+    `event Result(bytes4);`,
+]
