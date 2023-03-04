@@ -1,0 +1,21 @@
+{
+  "name": "eco-wallets-solc-helpers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "test": "npm run build && mocha js/tests/**.t.js -b --node-option enable-source-maps"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.14.6",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "solc": "^0.8.19",
+    "typescript": "^4.9.5"
+  }
+}
